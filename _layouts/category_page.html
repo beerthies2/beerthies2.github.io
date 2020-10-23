@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<h1>{{page.title}}</h1>
+<ul class="fancy">
+  {% for post in site.posts %}
+    {% if post.categories contains {{page.category}}  %}
+      {% if post.docurl %}
+        <li class="fancy"><a href="{{ site.baseurl }}{{ post.docurl }}">{{ post.date | date_to_string}} {{ post.title }}</a></li>
+      {% else %}
+        <li class="fancy"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endif %}
+    {% endif %}
+    {{ post.excerpt }}
+  {% endfor %}
+</ul>

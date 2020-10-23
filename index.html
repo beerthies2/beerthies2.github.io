@@ -1,0 +1,9 @@
+---
+layout: default
+title: BA MSc exams
+---
+<ul class="fancy">
+{% for category in site.categories %}
+      <li class="fancy"><a href="/{{category[0]}}/">{{category[0] | replace:"-"," " }}</a></li>
+{% endfor %}
+</ul>
